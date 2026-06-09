@@ -1,0 +1,15 @@
+:root {
+  --bg: #080808;
+  --surface: #101010;
+  --card: #171717;
+  --price: #971111;
+  --primary: #0F766E;
+  --primary-hover: #14B8A6;
+  --navbar: #031e45;
+  --text: #F8F8F8;
+  --text-secondary: #9CA3AF;
+  --search-placeholder: #000000;
+  --border: #232323;
+  --border-secondary: #000000;
+  --gradient: linear-gradient(90deg, #0c2180, #07173f);
+}

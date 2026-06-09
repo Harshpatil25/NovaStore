@@ -1,0 +1,41 @@
+.testimonial-bar{
+    display: flex;
+    flex-direction: row;
+}
+.testimonial-title{
+    display: flex;
+    margin: 20px;
+}
+.testimonial-card{
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    height: 250px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: var(--card);
+    transition: 0.5s ease;
+}
+.testimonial-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(62, 61, 62, 0.611);
+}
+.rating{
+    display: flex;
+    align-self: flex-start;
+    margin: 20px;
+}
+.description{
+    display: flex;
+    align-self: flex-start;
+    margin: 20px;
+}
+.customer-name{
+    display: flex;
+    align-self: flex-start;
+    margin: 20px;
+    background: linear-gradient(135deg, #075484, #053053);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
