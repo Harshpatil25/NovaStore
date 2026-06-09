@@ -10,7 +10,12 @@ Add screenshots of your project here.
 
 Example:
 
-![NovaStore Homepage](./public/preview.png)
+![NovaStore Homepage](./public/home.png)
+![NovaStore Homepage](./public/home2.png)
+![NovaStore Homepage](./public/footer.png)
+![NovaStore Shoppage](./public/shop.png)
+![NovaStore aboutpage](./public/about.png)
+![NovaStore contact](./public/contact.png)
 
 ---
 
