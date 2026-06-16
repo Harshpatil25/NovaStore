@@ -1,21 +1,22 @@
-.productcard-title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 80px;
-}
 .productcard{
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
+    flex-direction: column;
+    margin: 50px;
 }
-.product-img{
+.product-image{
     width: 310px;
-    height: 326px;
+    height: 230px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
-.product-card{
+.product-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.product-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +30,7 @@
     background-color: var(--card);
     transition: 0.5s;
 }
+
 .product-card:hover{
     transform: translateY(-10px);
     box-shadow: 0 10px 10px rgba(117, 117, 117, 0.599);
@@ -50,4 +52,77 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+.delete-btn{
+    display: flex;
+    transform: translate(100px,-45px);
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 9999px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.0rem;
+    color: var(--text);
+    background:linear-gradient(90deg, #b01d1d, #3a0a0a);;
+}
+.edit-btn{
+    display: flex;
+        transform: translate(100px,-35px);
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 9999px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.0rem;
+    color: var(--text);
+    background:linear-gradient(90deg, #1db031, #0a3a10);;
+}
+.edit-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-content {
+    background: #171717;
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.e-btn{
+    display: flex;
+    background: var(--gradient-secondary);
+    border: none;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    border-radius: 20px;
+    height: 30px;
+}
+.e-in{
+    display: flex;
+    background: var(--gradient-secondary);
+    border: none;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+    border-radius: 20px;
+}
+.edit-content input,
+.edit-content textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #222;
+    color: white;
 }

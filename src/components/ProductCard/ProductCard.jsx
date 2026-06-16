@@ -1,61 +1,116 @@
 import './ProductCard.css'
-import Bag from "./../../assets/bag.png"
-import Book from "./../../assets/book.png"
-import Chair from "./../../assets/chair.png"
-import Laptop from "./../../assets/laptop.png"
-import Shoes from "./../../assets/shoes.png"
-import Smartwatch from "./../../assets/smartwatch.png"
-import Headphone from "./../../assets/headphone.png"
-import Watch from "./../../assets/watch.png"
+import { useEffect, useState } from 'react'
+import supabase from './../../supabase'
 
-function ProductCard(){
-    return(
+function ProductCard() {
+    const [products, setProducts] = useState([])
+    const [editingId, setEditingId] = useState(null)
+
+const [editName, setEditName] = useState('')
+const [editPrice, setEditPrice] = useState('')
+const [editImage, setEditImage] = useState('')
+const [editDescription, setEditDescription] = useState('')
+    
+    async function fetchProducts() {
+            const { data, error } = await supabase.from('product').select('*')
+
+        if (error) {
+            console.log(error)
+        } 
+        else{
+            setProducts(data)
+        }
+
+    }
+
+    async function deleteProduct(id) {
+        const confirmDelete = window.confirm(
+            "Are you sure you want to delete this product?"
+        )
+
+        if (!confirmDelete) return
+
+        const { error } = await supabase.from("product").delete().eq("id", id)
+
+        if (error) {
+            alert(error.message)
+        } else {
+            fetchProducts()
+        }
+}
+function openEdit(product) {
+    setEditingId(product.id)
+
+    setEditName(product.name)
+    setEditPrice(product.price)
+    setEditImage(product.image)
+    setEditDescription(product.description)
+}
+async function updateProduct() {
+    const { error } = await supabase.from('product').update({name: editName,price: editPrice,image: editImage,description: editDescription,}).eq('id', editingId)
+    if (error) {
+        alert(error.message)
+    } else {
+        alert('Product Updated Successfully')
+        setEditingId(null)
+        fetchProducts()
+    }
+}
+    useEffect(() => {
+        fetchProducts()
+    },[])
+    return (
         <>
-        <h1 className='productcard-title'>Shop All Products</h1>
-        <div className='productcard'>
-            <div className='product-card'>
-                <img src={Bag} alt='bag' className='product-img'></img>
-                <h2 className='product-name'>Bag</h2>
-                <h2 className='product-price'>$56.00</h2>
+            <div className="productcard">
+                <h1 className='p-title'>Shop All Products</h1>
             </div>
-            <div className='product-card'>
-                <img src={Book} alt='Book' className='product-img'></img>
-                <h2 className='product-name'>You Can</h2>
-                <h2 className='product-price'>$89.00</h2>
+
+            <div className='product-box'>
+                {products.map((product) => (
+                    <div className='product-card' key={product.id}>
+                        <img
+                            src={product.image}
+                            alt={product.name}
+                            className='product-image'
+                            />
+                        
+                        <h2 className='product-name'>{product.name}</h2>
+
+                        <h3 className='product-price'>₹{product.price}</h3>
+                        <button onClick={() => deleteProduct(product.id)} className='delete-btn'>Delete</button>
+                        <button onClick={() => openEdit(product)} className='edit-btn'>Edit</button>
             </div>
-            <div className='product-card'>
-                <img src={Watch} alt='watch' className='product-img'></img>
-                <h2 className='product-name'>Sonata Sleek</h2>
-                <h2 className='product-price'>$76.00</h2>
-            </div>
-            <div className='product-card'>
-                <img src={Laptop} alt='laptop' className='product-img'></img>
-                <h2 className='product-name'>Acer ALG</h2>
-                <h2 className='product-price'>$120.00</h2>
-            </div>
-            <div className='product-card'>
-                <img src={Shoes} alt='shoes' className='product-img'></img>
-                <h2 className='product-name'>Nike Jordan 1</h2>
-                <h2 className='product-price'>$99.00</h2>
-            </div>
-            <div className='product-card'>
-                <img src={Smartwatch} alt='smaretwatch' className='product-img'></img>
-                <h2 className='product-name'>Smartwatch</h2>
-                <h2 className='product-price'>$90.00</h2>
-            </div>
-            <div className='product-card'>
-                <img src={Chair} alt='chair' className='product-img'></img>
-                <h2 className='product-name'>Gaming Chair</h2>
-                <h2 className='product-price'>$87.00</h2>
-            </div>
-            <div className='product-card'>
-                <img src={Headphone} alt='headphone' className='product-img'></img>
-                <h2 className='product-name'>Wireless Headphone</h2>
-                <h2 className='product-price'>$70.00</h2>
-            </div>
+        ))}
+    </div>
+    {editingId && (
+    <div className="edit-modal">
+        <div className="edit-content">
+            <h2>Edit Product</h2>
+            <input
+                value={editName}
+                onChange={(e) => setEditName(e.target.value)}
+                placeholder="Product Name"
+                className='e-in'
+            />
+            <input
+                value={editPrice}
+                onChange={(e) => setEditPrice(e.target.value)}
+                placeholder="Price"
+                className='e-in'
+            />
+            <input
+                value={editImage}
+                onChange={(e) => setEditImage(e.target.value)}
+                placeholder="Image URL"
+                className='e-in'
+            />
+            <button onClick={updateProduct} className='e-btn'>Save</button>
+            <button onClick={() => setEditingId(null)} className='e-btn'>Cancel</button>
         </div>
-        </>
-    )
+    </div>
+)}
+</>
+)
 }
 
 export default ProductCard

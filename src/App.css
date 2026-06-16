@@ -11,5 +11,8 @@
   --search-placeholder: #000000;
   --border: #232323;
   --border-secondary: #000000;
+  --btn: #ffe4c4 ;
   --gradient: linear-gradient(90deg, #0c2180, #07173f);
+  --gradient-btn: linear-gradient(90deg, #2889b9, #0a3a3a);
+  --gradient-secondary: linear-gradient(90deg, #8b2abb, #3d1352);
 }
