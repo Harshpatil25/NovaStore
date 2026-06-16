@@ -3,6 +3,7 @@
 import './addProduct.css'
 import { useState } from 'react'
 import supabase from './../supabase'
+import Footer from '../components/Footer/Footer'
 
 function AddProduct() {
     const [name, setName] = useState('')
@@ -56,6 +57,7 @@ function AddProduct() {
             </button>
         </form>
         </div>
+        <Footer />
     </>
 )
 }
