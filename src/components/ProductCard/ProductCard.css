@@ -4,6 +4,10 @@
     flex-direction: column;
     margin: 50px;
 }
+.p-title{
+    display: flex;
+    margin-top: 30px;
+}
 .product-image{
     width: 310px;
     height: 230px;

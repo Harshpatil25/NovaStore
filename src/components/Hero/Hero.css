@@ -6,7 +6,9 @@
     justify-content: center;
     border-radius: 20px;
     align-items: center;
-    margin: 70px auto;
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .hero-content{
     position: absolute;

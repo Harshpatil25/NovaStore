@@ -1,18 +1,18 @@
 :root {
-  --bg: #080808;
-  --surface: #101010;
-  --card: #171717;
+  --bg: #0F1117;
+  --surface: #171A23;
+  --card: #1E2230;
   --price: #971111;
-  --primary: #0F766E;
-  --primary-hover: #14B8A6;
-  --navbar: #031e45;
-  --text: #F8F8F8;
-  --text-secondary: #9CA3AF;
+  --primary: #8B5CF6;
+  --primary-hover: #7C3AED;
+  --navbar: #3a8afb;
+  --text: #ffffff;
+  --text-secondary: #A8B3CF;
   --search-placeholder: #000000;
-  --border: #232323;
+  --border: #2D3347;
   --border-secondary: #000000;
   --btn: #ffe4c4 ;
-  --gradient: linear-gradient(90deg, #0c2180, #07173f);
+  --gradient: linear-gradient(90deg, #6e1d89 , #400b52);
   --gradient-btn: linear-gradient(90deg, #2889b9, #0a3a3a);
   --gradient-secondary: linear-gradient(90deg, #8b2abb, #3d1352);
 }

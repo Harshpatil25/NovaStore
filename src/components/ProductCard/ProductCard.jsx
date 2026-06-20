@@ -67,7 +67,7 @@ async function updateProduct() {
 
             <div className='product-box'>
                 {products.map((product) => (
-                    <div className='product-card' key={product.id}>
+                    <div className='product-card' key={product.id} >
                         <img
                             src={product.image}
                             alt={product.name}
