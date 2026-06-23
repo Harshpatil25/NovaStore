@@ -74,12 +74,15 @@ src/
 │   ├── Home.jsx
 │   ├── Shop.jsx
 │   ├── About.jsx
-│   └── Contact.jsx
+│   ├── Contact.jsx
+│   ├── addProduct.css
+│   └── addProduct.jsx
 │
 ├── App.jsx
 ├── App.css
 ├── main.jsx
-└── index.css
+├── index.css
+└── supabase.js
 ```
 
 ---
