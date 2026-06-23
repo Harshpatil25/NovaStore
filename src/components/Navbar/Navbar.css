@@ -37,13 +37,13 @@
     text-decoration: none;
     transition: 0.5s;
 }
-a {
+.li-a {
     text-decoration: none;
     position: relative;
     overflow: hidden;
 }
 
-a::after {
+.li-a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -54,7 +54,7 @@ a::after {
     transition: width 0.3s ease;
 }
 
-a:hover::after {
+.li-a:hover::after {
     width: 100%;
     animation: heartbeat116 1.5s ease-in-out 0.3s infinite;
 }
@@ -64,6 +64,15 @@ a:hover::after {
     width: 100%;
     }
     50% {
-    width: 60%;
+    width: 100%;
     }
+}
+.add{
+    display: flex;
+    transform: translate(200px,0);
+    border: 2px solid #454345;
+    border-radius:5px ;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
 }
