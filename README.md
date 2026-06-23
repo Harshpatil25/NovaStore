@@ -12,10 +12,10 @@ Example:
 
 ![NovaStore Homepage](./public/home.png)
 ![NovaStore Homepage](./public/home2.png)
-![NovaStore Homepage](./public/footer.png)
 ![NovaStore Shoppage](./public/shop.png)
 ![NovaStore aboutpage](./public/about.png)
 ![NovaStore contact](./public/contact.png)
+![NovaStore contact](./public/addproduct.png)
 
 ---
 
